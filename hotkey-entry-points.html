@@ -124,6 +124,13 @@ body{background:var(--bg);font-family:var(--font-ui);color:var(--text);font-size
 .nav-row-icon{width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;opacity:.7}
 .nav-row.active .nav-row-icon{opacity:1}
 .nav-row-lbl{flex:1;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-row-key{
+  font-family:var(--font-data);font-size:10px;
+  color:var(--text-3);flex-shrink:0;
+  opacity:0;transition:opacity .12s;
+}
+.nav-row:hover .nav-row-key{opacity:1}
+.nav-row.active .nav-row-key{opacity:.6;color:var(--brand)}
 
 /* ─── F-key strip ─── */
 .nav-fkey{
@@ -693,14 +700,17 @@ body{background:var(--bg);font-family:var(--font-ui);color:var(--text);font-size
       <div class="nav-row">
         <div class="nav-row-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 3h10v10H3V3z" stroke="currentColor" stroke-width="1.3"/><path d="M3 6h10" stroke="currentColor" stroke-width="1.3"/><path d="M7 6v7" stroke="currentColor" stroke-width="1.3"/></svg></div>
         <div class="nav-row-lbl">Watchlist</div>
+        <span class="nav-row-key">⌘W</span>
       </div>
       <div class="nav-row active">
         <div class="nav-row-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 12l3-4 3 2 3-5 3 3" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <div class="nav-row-lbl">Market</div>
+        <span class="nav-row-key">⌘1</span>
       </div>
       <div class="nav-row">
         <div class="nav-row-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><rect x="2" y="8" width="3" height="6" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="6.5" y="5" width="3" height="9" rx="1" stroke="currentColor" stroke-width="1.3"/><rect x="11" y="2" width="3" height="12" rx="1" stroke="currentColor" stroke-width="1.3"/></svg></div>
         <div class="nav-row-lbl">Portfolio</div>
+        <span class="nav-row-key">⌘P</span>
       </div>
       <div class="nav-eyebrow" style="margin-top:4px">
         <span class="nav-eyebrow-lbl">Custom Layout</span>
@@ -709,10 +719,12 @@ body{background:var(--bg);font-family:var(--font-ui);color:var(--text);font-size
       <div class="nav-row">
         <div class="nav-row-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l2 1.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <div class="nav-row-lbl">Bandar Hunt</div>
+        <span class="nav-row-key">⌘2</span>
       </div>
       <div class="nav-row">
         <div class="nav-row-icon"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M2 8c0-3.3 2.7-6 6-6s6 2.7 6 6-2.7 6-6 6-6-2.7-6-6z" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3l3 1" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
         <div class="nav-row-lbl">Foreign Flow Watch</div>
+        <span class="nav-row-key">⌘3</span>
       </div>
     </div>
 
@@ -806,7 +818,10 @@ body{background:var(--bg);font-family:var(--font-ui);color:var(--text);font-size
         <span class="ct-search-ph">Cari saham, aksi…</span>
         <div class="ct-hint"><span class="kbd">⌘</span><span class="kbd">K</span></div>
       </div>
-      <button class="ct-trade">Trade</button>
+      <button class="ct-trade" style="display:flex;align-items:center;gap:6px">
+        Trade
+        <span style="font-family:var(--font-data);font-size:10px;opacity:.7">F1</span>
+      </button>
     </div>
 
     <!-- Content area -->
